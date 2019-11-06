@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Warmup Exercise</title>
+</head>
+
+<body>
+  <script>
+    const input = ['mmmgdsdwqulhrinkatfjoyzxcbvq', 'megsdwpulhrinkasfjdyzxcbvk', 'megsdwpulhmibkatfjoyzccbvq', 'megsdwtuohrinkatfjoyzecbvq', 'megsdwpulhdinkatfyoyzxcbvb', 'megszwpulhrirkatfjoyexcbvq', 'eegsdwpulhzinkatfjoyzxdbvq', 'megsdwpulhginkatfjoyqucbvq', 'leqsdwpulhrinkatfeoyzxcbvq', 'megsdwpblhrandatfjoyzxcbvq', 'megrdwpudhrinvatfjoyzxcbvq']
+
+    // 1. Iterate over an array of things
+    // 2. Transform each thing into a different thing
+    // 3. Count totals inside of each onbe of those things
+
+    const countLetters = stringArray => {
+      // 1. Transform an array of strings into an array of objects, each object having a key for each letter in the string
+
+      stringArray.map(string => {
+        // Grab each string in the array of strings one at a time
+        // Create object to map the letters on to
+        const obj = {}
+
+        //Create an array of all the letters using split
+        const letters = string.split('') //['a', 'b', 'c, 'd']
+
+        // Iterate through each letter one at a time
+        for (let i = 0; i < letters.length; i++) {
+
+          // Grab each letter one at a time
+          const currentLetter = letters[i]
+
+          // Check if the letter already exists on the object
+          if (obj[currentLetter]) {
+            // If it does, add one to it
+            obj[currentLetter] = obj[currentLetter] + 1
+          } else {
+            // If it doesn't exist on the object
+            // this is the first occurence of it, so add the letter and start it at 1
+            obj[currentLetter] = 1
+          }
+        }
+
+        console.log(obj)
+      })
+      // 2. Keep track of how many occurences of each letter appears in the string
+    }
+
+    const output = countLetters(input) //[ { a: 2, b: 1, ... } ]
+
+  </script>
+</body>
+
+</html>
